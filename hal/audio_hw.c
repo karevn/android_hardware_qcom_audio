@@ -1324,7 +1324,7 @@ int select_devices(struct audio_device *adev, audio_usecase_t uc_id)
     ALOGD("%s: out_snd_device(%d: %s) in_snd_device(%d: %s)", __func__,
           out_snd_device, platform_get_snd_device_name(out_snd_device),
           in_snd_device,  platform_get_snd_device_name(in_snd_device));
-
+    amplifier_set_output_devices(out_snd_device);
     /*
      * Limitation: While in call, to do a device switch we need to disable
      * and enable both RX and TX devices though one of them is same as current
